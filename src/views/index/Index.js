@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react';
-import { View, Text, Button } from 'react-native';
+import React from 'react';
+import { View, Button } from 'react-native';
 
 const Index = (props) => {
-    useEffect(() => {
-    })
     const goDetail = () => {
-        props.navigation.navigate("Detail")
+        props.navigation.navigate("Detail", {
+            id: 123 //传递参数
+        })
     }
     return (
         <View>
