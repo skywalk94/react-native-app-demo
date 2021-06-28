@@ -10,6 +10,7 @@ const Index = (props) => {
     return (
         <View>
             <Button title="跳转到详情" onPress={() => goDetail()}></Button>
+            <Button title="跳转到生命周期函数" onPress={() => props.navigation.navigate("Life")}></Button>
         </View>
     );
 }
