@@ -1,11 +1,17 @@
 import React from 'react';
 import { Text, Button } from 'react-native';
+import { getFocusedRouteNameFromRoute } from '@react-navigation/native';
 import {
     DrawerContentScrollView,
     createDrawerNavigator
 } from '@react-navigation/drawer';
 const Drawer = createDrawerNavigator();
-import StackNavigator from "./StackNavigator"
+import TabNavigator from "./TabNavigator"
+
+const getChildTitle = (route) => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+    return routeName
+}
 
 // 自定义抽屉内容
 const DrawerContent = (props) => {
@@ -18,12 +24,15 @@ const DrawerContent = (props) => {
     );
 }
 
-const drawerNavigator = () => {
+const DrawerNavigator = () => {
     return (
-        <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-            <Drawer.Screen name="StackNavigator" component={StackNavigator} />
+        <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />} >
+            <Drawer.Screen name="明知山" component={TabNavigator} options={({ route }) => ({
+                title: getChildTitle(route),
+            })}
+            />
         </Drawer.Navigator>
     );
 }
 
-export default drawerNavigator;
+export default DrawerNavigator;

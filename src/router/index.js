@@ -1,8 +1,8 @@
 const router = [
     {
-        name: "Tab", //跳转路径
-        title: "明知山", //头部展示标题
-        component: require("./TabNavigator").default,
+        name: "Drawer", //跳转路径
+        title: "Drawer", //头部展示标题
+        component: require("./DrawerNavigator").default,
     },
     {
         name: "Index",

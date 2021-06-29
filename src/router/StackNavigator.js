@@ -24,7 +24,6 @@ const StackNavigator = () => {
                                 color: '#000',
                                 fontSize: 15
                             },
-                            // headerShown: false, //不显示头部标题
                         })} />
                     )
                 })
