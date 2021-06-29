@@ -1,10 +1,19 @@
 const router = [
     {
-        name: "Index", //跳转路径
+        name: "Tab", //跳转路径
         title: "明知山", //头部展示标题
         component: require("./TabNavigator").default,
     },
-    //下面只需要配置非tabbar页面路径
+    {
+        name: "Index",
+        title: "首页",
+        component: require("../views/Index/Index").default
+    },
+    {
+        name: "Mine",
+        title: "我的",
+        component: require("../views/Mine/Mine").default
+    },
     {
         name: "Detail",
         title: "详情",
