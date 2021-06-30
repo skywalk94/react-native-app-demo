@@ -24,6 +24,7 @@ const StackNavigator = () => {
                                 color: '#000',
                                 fontSize: 15
                             },
+                            headerShown: item.headerShown
                         })} />
                     )
                 })

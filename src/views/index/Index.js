@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Button } from 'react-native';
 
 const Index = (props) => {
-    console.log(props)
     const goDetail = () => {
         props.navigation.navigate("Detail", {
             id: 123 //传递参数

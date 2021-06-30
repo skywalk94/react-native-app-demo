@@ -3,6 +3,7 @@ const router = [
         name: "Drawer", //跳转路径
         title: "Drawer", //头部展示标题
         component: require("./DrawerNavigator").default,
+        headerShown: false
     },
     {
         name: "Index",
