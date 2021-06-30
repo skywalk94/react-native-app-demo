@@ -1,20 +1,10 @@
 const router = [
     {
-        name: "Drawer", //跳转路径
-        title: "Drawer", //头部展示标题
-        component: require("./DrawerNavigator").default,
-        headerShown: false
+        name: "Tab", //跳转路径
+        title: "Tab", //头部展示标题
+        component: require("./TabNavigator").default
     },
-    {
-        name: "Index",
-        title: "首页",
-        component: require("../views/Index/Index").default
-    },
-    {
-        name: "Mine",
-        title: "我的",
-        component: require("../views/Mine/Mine").default
-    },
+    //只需要引入非Tabbar页面
     {
         name: "Detail",
         title: "详情",
