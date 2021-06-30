@@ -12,7 +12,6 @@ const DrawerContent = (props) => {
         <DrawerContentScrollView>
             <Text>自定义抽屉的内容</Text>
             <Button title="跳转到详情" onPress={() => { props.navigation.navigate("Detail", { id: 123 }) }}></Button>
-            <Button title="跳转到个人中心" onPress={() => { props.navigation.navigate("Mine") }}></Button>
         </DrawerContentScrollView>
     );
 }
@@ -29,6 +28,9 @@ const Main = (props) => {
             <Button title="打开抽屉" onPress={() => props.navigation.openDrawer()}></Button>
             <Button title="跳转到详情" onPress={() => goDetail()}></Button>
             <Button title="跳转到生命周期函数" onPress={() => props.navigation.navigate("Life")}></Button>
+            <Button title="跳转到组件" onPress={() => { props.navigation.navigate("Module") }}></Button>
+            <Button title="跳转到组件1" onPress={() => { props.navigation.navigate("Module_one") }}></Button>
+            <Button title="跳转到组件2" onPress={() => { props.navigation.navigate("Module_two") }}></Button>
         </View>
     )
 }
