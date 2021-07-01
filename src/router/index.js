@@ -30,5 +30,10 @@ const router = [
         title: "React-native组件",
         component: require("../views/Module_two/Module_two").default
     },
+    {
+        name: "Photo",
+        title: "上传图片",
+        component: require("../views/Photo/Photo").default
+    },
 ]
 export default router

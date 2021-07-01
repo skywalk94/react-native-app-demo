@@ -26,11 +26,12 @@ const Main = (props) => {
     return (
         <View>
             <Button title="打开抽屉" onPress={() => props.navigation.openDrawer()}></Button>
-            <Button title="跳转到详情" onPress={() => goDetail()}></Button>
-            <Button title="跳转到生命周期函数" onPress={() => props.navigation.navigate("Life")}></Button>
-            <Button title="跳转到组件" onPress={() => { props.navigation.navigate("Module") }}></Button>
-            <Button title="跳转到组件1" onPress={() => { props.navigation.navigate("Module_one") }}></Button>
-            <Button title="跳转到组件2" onPress={() => { props.navigation.navigate("Module_two") }}></Button>
+            <Button title="路由传参详情" onPress={() => goDetail()}></Button>
+            <Button title="生命周期函数" onPress={() => props.navigation.navigate("Life")}></Button>
+            <Button title="组件" onPress={() => { props.navigation.navigate("Module") }}></Button>
+            <Button title="组件1" onPress={() => { props.navigation.navigate("Module_one") }}></Button>
+            <Button title="组件2" onPress={() => { props.navigation.navigate("Module_two") }}></Button>
+            <Button title="上传图片" onPress={() => { props.navigation.navigate("Photo") }}></Button>
         </View>
     )
 }
