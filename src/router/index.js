@@ -45,5 +45,10 @@ const router = [
         title: "预览图片",
         component: require("../views/Preview/Preview").default
     },
+    {
+        name: "Antd",
+        title: "Antd组件库",
+        component: require("../views/Antd/Antd").default
+    },
 ]
 export default router

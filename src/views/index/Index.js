@@ -34,6 +34,7 @@ const Main = (props) => {
             <Button title="上传图片" onPress={() => { props.navigation.navigate("Photo") }}></Button>
             <Button title="联系人" onPress={() => { props.navigation.navigate("Contacts") }}></Button>
             <Button title="预览图片" onPress={() => { props.navigation.navigate("Preview") }}></Button>
+            <Button title="Antd组件库" onPress={() => { props.navigation.navigate("Antd") }}></Button>
         </View>
     )
 }
