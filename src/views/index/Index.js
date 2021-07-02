@@ -32,6 +32,8 @@ const Main = (props) => {
             <Button title="组件1" onPress={() => { props.navigation.navigate("Module_one") }}></Button>
             <Button title="组件2" onPress={() => { props.navigation.navigate("Module_two") }}></Button>
             <Button title="上传图片" onPress={() => { props.navigation.navigate("Photo") }}></Button>
+            <Button title="联系人" onPress={() => { props.navigation.navigate("Contacts") }}></Button>
+            <Button title="预览图片" onPress={() => { props.navigation.navigate("Preview") }}></Button>
         </View>
     )
 }

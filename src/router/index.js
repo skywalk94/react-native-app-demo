@@ -35,5 +35,15 @@ const router = [
         title: "上传图片",
         component: require("../views/Photo/Photo").default
     },
+    {
+        name: "Contacts",
+        title: "联系人",
+        component: require("../views/Contacts/Contacts").default
+    },
+    {
+        name: "Preview",
+        title: "预览图片",
+        component: require("../views/Preview/Preview").default
+    },
 ]
 export default router
