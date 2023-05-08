@@ -7,8 +7,8 @@ const tabBar = [
     {
         name: "首页",
         component: require("../screens/Index").default,
-        icon: require("../assets/imgs/home.png"),
-        selectIcon: require("../assets/imgs/home_1.png")
+        icon: require("../assets/imgs/index.png"),
+        selectIcon: require("../assets/imgs/index_1.png")
     },
     {
         name: "中心",
