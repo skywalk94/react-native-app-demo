@@ -1,8 +1,12 @@
 import * as React from 'react'
+import { StatusBar } from 'expo-status-bar'
 import AppNavigation from "./src/navigation/appNavigation"
 
 export default () => {
   return (
-    <AppNavigation />
+    <>
+      <StatusBar style="auto" />
+      <AppNavigation />
+    </>
   )
 }
