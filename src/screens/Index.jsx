@@ -1,13 +1,21 @@
-import React from 'react'
-import { View, Text, Button } from 'react-native'
-import { useNavigation } from '@react-navigation/native'
+import React, { useState } from 'react'
+import { Button, Text } from 'react-native'
+import PopUp from "../components/PopUp"
 
 export default () => {
-    const navigation = useNavigation()
+    const [visible, setVisible] = useState(false)
+
     return (
-        <View>
-            <Text>首页</Text>
-            <Button title="跳转到详情" onPress={() => navigation.navigate('detail', { id: 123 })} />
-        </View>
+        <>
+            <Button title="打开弹窗" onPress={() => setVisible(true)} />
+            <PopUp visible={visible} closeModal={() => setVisible(false)}>
+                <Text>占位</Text>
+                <Text>占位</Text>
+                <Text>占位</Text>
+                <Text>占位</Text>
+                <Text>占位</Text>
+                <Text>占位</Text>
+            </PopUp>
+        </>
     )
 }

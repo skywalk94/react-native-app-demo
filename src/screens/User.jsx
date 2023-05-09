@@ -2,8 +2,11 @@ import React from 'react'
 import { View, Text } from 'react-native'
 export default () => {
     return (
-        <View>
-            <Text>我的</Text>
+        <View
+            style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}
+        >
+            <Text>This is top text.</Text>
+            <Text>This is bottom text.</Text>
         </View>
     )
 }
