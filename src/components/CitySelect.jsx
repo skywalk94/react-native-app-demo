@@ -1,74 +1,96 @@
-import React, { useRef, useState, useEffect } from "react"
-import { Animated, StyleSheet, Button, Text, View, TouchableWithoutFeedback } from "react-native"
-import { winWidth, winHeight } from "../utils/device"
+import { useState, useEffect } from "react"
+import { Button, View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native"
+import PopUp from "./PopUp"
+import pcaCode from "../assets/js/pca-code.json"
+const options = pcaCode
 
 export default () => {
+    const [visible, setVisible] = useState(true)
+    const [tabs, setTabs] = useState([])
+    const [tabIndex, setTabIndex] = useState(0)
+    const [cities, setCities] = useState([])
 
-    const [visible, setVisible] = useState(false)
-
-    const opacity = useRef(new Animated.Value(0)).current
-    const translateY = useRef(new Animated.Value(winHeight)).current
-
-    const AnimatedOption = {
-        duration: 300,
-        useNativeDriver: true
-    }
 
     useEffect(() => {
-        if (!visible) return
-        Animated.parallel([
-            Animated.timing(opacity, { ...{ toValue: 1 }, ...AnimatedOption }),
-            Animated.timing(translateY, { ...{ toValue: 0 }, ...AnimatedOption })
-        ]).start()
-    }, [visible])
+        getSelectOptions()
+    }, [])
 
-    const hideVisible = () => {
-        Animated.parallel([
-            Animated.timing(opacity, { ...{ toValue: 0 }, ...AnimatedOption }),
-            Animated.timing(translateY, { ...{ toValue: winHeight }, ...AnimatedOption })
-        ]).start(() => {
-            setVisible(false)
-        })
+    const getSelectOptions = () => {
+        console.log(options)
+        setCities(options)
+    }
+
+    const selectCity = (item) => {
+        // setTabs(oldTab => [...oldTab, { code: item.code, name: item.name }])
+        if (item?.children) {
+            setCities(item.children)
+            setTabIndex(index => index + 1)
+            console.log(tabIndex)
+        }
     }
 
     return (
         <>
-            <Button title="弹窗" onPress={() => setVisible(true)} />
-            {visible &&
-                <View style={css.pop}>
-                    <TouchableWithoutFeedback onPress={() => hideVisible()}>
-                        <Animated.View style={[css.pop_overlay, { opacity: opacity }]} />
-                    </TouchableWithoutFeedback >
-                    <Animated.View style={[css.pop_up, { transform: [{ translateY: translateY }] }]}>
-                        <Text>我是占位的</Text>
-                        <Text>我是占位的</Text>
-                        <Text>我是占位的</Text>
-                        <Text>我是占位的</Text>
-                    </Animated.View>
+            <Button title="弹出地址选择" onPress={() => setVisible(true)}></Button>
+            <PopUp visible={visible} close={() => setVisible(false)}>
+                <View style={css.content}>
+                    <Text style={css.title}>请选择所在地区</Text>
+                    <View style={css.tab}>
+                        {
+                            tabs.map((item, index) => {
+                                return <Text key={index} style={[css.tab_item, css.tab_item_active]}>{item.name}</Text>
+                            })
+                        }
+                    </View>
+                    <View style={css.area}>
+                        <FlatList data={cities} keyExtractor={item => item.code}
+                            renderItem={({ item }) => {
+                                return (
+                                    <TouchableOpacity onPress={() => selectCity(item)}>
+                                        <Text style={css.area_item}>{item.name}</Text>
+                                    </TouchableOpacity>
+                                )
+                            }}
+                        />
+                    </View>
                 </View>
-            }
+            </PopUp>
         </>
     )
 }
 
 const css = StyleSheet.create({
-    pop: {
-
+    content: {
+        paddingTop: 20,
     },
-    pop_overlay: {
-        position: 'absolute',
-        top: 0,
-        bottom: 0,
-        width: winWidth,
-        height: winHeight,
-        backgroundColor: 'rgba(0,0,0,0.4)',
-        zIndex: 1
+    title: {
+        fontSize: 18,
+        fontWeight: "bold",
+        marginLeft: 20,
     },
-    pop_up: {
-        position: 'absolute',
-        bottom: 0,
-        width: winWidth,
-        backgroundColor: '#ffffff',
-        zIndex: 2
+    tab: {
+        flexDirection: "row",
+        marginTop: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: "#eee",
+        paddingLeft: 20,
+        paddingRight: 20,
+    },
+    tab_item: {
+        fontSize: 14,
+        paddingBottom: 5,
+        marginRight: 20,
+    },
+    tab_item_active: {
+        borderBottomWidth: 2,
+        borderBottomColor: "#1989fa",
+    },
+    area: {
+        height: 500,
+        overflow: "scroll",
+    },
+    area_item: {
+        padding: 12,
+        fontSize: 14,
     }
 })

@@ -1,4 +1,3 @@
-import React from "react"
 import { Dimensions, Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 const { width } = Dimensions.get('window')
 
@@ -33,7 +32,6 @@ const styles = StyleSheet.create({
         width: width,
         backgroundColor: '#ffffff',
         zIndex: 1,
-        padding: 20,
         borderTopLeftRadius: 10,
         borderTopRightRadius: 10,
     },

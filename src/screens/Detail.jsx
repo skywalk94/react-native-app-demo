@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import  { useEffect } from 'react'
 import { View, Text, Button } from 'react-native'
 import { useNavigation, useRoute } from '@react-navigation/native'
 export default () => {
