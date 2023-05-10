@@ -8,7 +8,7 @@ export default () => {
     return (
         <>
             <Button title="打开弹窗" onPress={() => setVisible(true)} />
-            <PopUp visible={visible} closeModal={() => setVisible(false)}>
+            <PopUp visible={visible} close={() => setVisible(false)}>
                 <Text>占位</Text>
                 <Text>占位</Text>
                 <Text>占位</Text>
