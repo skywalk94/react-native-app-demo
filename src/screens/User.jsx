@@ -1,23 +1,11 @@
-import * as React from 'react'
-import { Button, Text } from 'react-native'
-import { Drawer } from 'react-native-drawer-layout'
-
+import { View, Text } from 'react-native'
 export default () => {
-    const [open, setOpen] = React.useState(false)
-
     return (
-        <Drawer
-            open={open}
-            onOpen={() => setOpen(true)}
-            onClose={() => setOpen(false)}
-            renderDrawerContent={() => {
-                return <Text>Drawer content</Text>
-            }}
+        <View
+            style={{ flex: 1, justifyContent: 'space-between', alignItems: 'center' }}
         >
-            <Button
-                onPress={() => setOpen((prevOpen) => !prevOpen)}
-                title={`${open ? 'Close' : 'Open'} drawer`}
-            />
-        </Drawer>
+            <Text>This is top text.</Text>
+            <Text>This is bottom text.</Text>
+        </View>
     )
 }
