@@ -15,15 +15,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.iapex.expoappdemo"
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.iapex.expoappdemo"
+      }
     },
     "web": {
       "favicon": "./assets/icon.png"
