@@ -1,9 +1,17 @@
 import { useState } from 'react'
-import { Text, useWindowDimensions, StyleSheet } from 'react-native'
+import { Text, useWindowDimensions, StyleSheet, ScrollView } from 'react-native'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 const one = () => (
-    <Text>1</Text>
+    <ScrollView>
+        {
+            [1, 1, 1, 1, 1].map((item, index) => {
+                return (
+                    <Text key={index} style={styles.text}>1</Text>
+                )
+            })
+        }
+    </ScrollView>
 )
 const two = () => (
     <Text>2</Text>
@@ -18,11 +26,10 @@ export default () => {
     const [index, setIndex] = useState(0)
     const [routes] = useState([
         { key: 'one', title: 'option1' },
-        { key: 'two', title: 'option2' },
-        { key: 'three', title: 'option3' }
+        { key: 'two', title: 'option2' }
     ])
     const renderTabBar = (props) => (
-        <TabBar {...props} activeColor="#16BA98" inactiveColor="#333333" style={styles.tabBar} indicatorStyle={styles.line} />
+        <TabBar {...props} activeColor="#16BA98" inactiveColor="#333333" style={styles.tabBar} indicatorStyle={styles.line} tabStyle={styles.tab} scrollEnabled bounces={false} />
     )
     return (
         <TabView
@@ -36,10 +43,16 @@ export default () => {
 }
 
 const styles = StyleSheet.create({
+    text: {
+        marginBottom: 200,
+    },
     tabBar: {
         backgroundColor: '#fff'
     },
     line: {
         backgroundColor: "#16BA98",
+    },
+    tab: {
+        width: "auto"
     }
 })
