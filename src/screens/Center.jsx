@@ -6,7 +6,7 @@ export default () => {
     return (
         <View>
             <Text>中心</Text>
-            <Button title="跳转到详情" onPress={() => navigation.navigate('detail', { id: 123 })} />
+            <Button title="跳转到详情" onPress={() => navigation.navigate('Detail', { id: 123 })} />
         </View>
     )
 }

@@ -7,8 +7,13 @@ export default [
         }
     },
     {
-        name: "detail",
+        name: "Detail",
         title: "详情",
         component: require("../screens/Detail").default
+    },
+    {
+        name: "CustomPop",
+        title: "自定义弹窗",
+        component: require("../screens/CustomPop").default
     }
 ]

@@ -1,18 +1,12 @@
-import { useState } from 'react'
-import { Text, Button } from 'react-native'
-import PopUp from "../components/PopUp"
+import { Button } from 'react-native'
+import { useNavigation } from '@react-navigation/native'
 
 export default () => {
-    const [visible, setVisible] = useState(false)
+    const navigation = useNavigation()
 
     return (
         <>
-            <Button title='打开弹窗' onPress={() => setVisible(true)} />
-            <PopUp visible={visible} close={() => setVisible(false)}>
-                <Text>占位</Text>
-                <Text>占位</Text>
-                <Text>占位</Text>
-            </PopUp>
+            <Button title='自定义底部弹窗' onPress={() => navigation.navigate('CustomPop')} />
         </>
     )
 }
