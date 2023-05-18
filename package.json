@@ -9,7 +9,6 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@babel/plugin-proposal-export-namespace-from": "^7.18.9",
     "@expo/webpack-config": "0.17.2",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/drawer": "^6.6.2",
@@ -30,7 +29,8 @@
     "react-native-web": "~0.18.9"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@babel/core": "^7.20.0",
+    "@babel/plugin-proposal-export-namespace-from": "^7.18.9"
   },
   "private": true
 }
