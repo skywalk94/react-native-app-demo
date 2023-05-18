@@ -19,6 +19,7 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-native": "0.70.8",
+    "react-native-actions-sheet": "^0.8.29",
     "react-native-drawer-layout": "^3.2.0",
     "react-native-gesture-handler": "~2.8.0",
     "react-native-pager-view": "6.0.1",

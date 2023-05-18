@@ -30,5 +30,10 @@ export default [
         name: "Picker",
         title: "选择器",
         component: require("../screens/Picker").default
+    },
+    {
+        name: "Sheet",
+        title: "sheet弹窗",
+        component: require("../screens/Sheet").default
     }
 ]
