@@ -7,7 +7,7 @@ import routes from "./routes"
 export default () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="Tab">
+            <Stack.Navigator initialRouteName="Picker">
                 {routes.map(item => {
                     return (
                         <Stack.Screen key={item.name} name={item.name} component={item.component}

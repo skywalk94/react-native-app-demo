@@ -25,5 +25,10 @@ export default [
         name: "Tab",
         title: "选项卡",
         component: require("../screens/Tab").default
+    },
+    {
+        name: "Picker",
+        title: "选择器",
+        component: require("../screens/Picker").default
     }
 ]
