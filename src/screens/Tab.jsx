@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Text, useWindowDimensions, StyleSheet, ScrollView } from 'react-native'
+import { Text, useWindowDimensions, StyleSheet, ScrollView, View } from 'react-native'
 import { TabView, TabBar, SceneMap } from 'react-native-tab-view'
 
 const one = () => (
@@ -32,17 +32,23 @@ export default () => {
         <TabBar {...props} activeColor="#16BA98" inactiveColor="#333333" style={styles.tabBar} indicatorStyle={styles.line} tabStyle={styles.tab} scrollEnabled bounces={false} />
     )
     return (
-        <TabView
-            renderTabBar={renderTabBar}
-            navigationState={{ index, routes }}
-            renderScene={SceneMap({ one: one, two: two, three: three })}
-            onIndexChange={setIndex}
-            initialLayout={{ width: layout.width }}
-        />
+        <View style={styles.box}>
+            <Text>头部</Text>
+            <TabView
+                renderTabBar={renderTabBar}
+                navigationState={{ index, routes }}
+                renderScene={SceneMap({ one: one, two: two, three: three })}
+                onIndexChange={setIndex}
+                initialLayout={{ width: layout.width }}
+            />
+        </View>
     )
 }
 
 const styles = StyleSheet.create({
+    box: {
+        flex: 1,
+    },
     text: {
         marginBottom: 200,
     },
