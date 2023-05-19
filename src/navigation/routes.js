@@ -18,7 +18,7 @@ export default [
     },
     {
         name: "Drawer",
-        title: "自定义弹窗",
+        title: "抽屉",
         component: require("../screens/Drawer").default
     },
     {
@@ -35,5 +35,10 @@ export default [
         name: "Sheet",
         title: "sheet弹窗",
         component: require("../screens/Sheet").default
+    },
+    {
+        name: "Carousel",
+        title: "轮播图",
+        component: require("../screens/Carousel").default
     }
 ]

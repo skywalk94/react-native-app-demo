@@ -11,6 +11,7 @@ export default () => {
             <Button title='Tab选项卡' onPress={() => navigation.navigate('Tab')} />
             <Button title='Picker选择器' onPress={() => navigation.navigate('Picker')} />
             <Button title='Sheet弹窗' onPress={() => navigation.navigate('Sheet')} />
+            <Button title='轮播' onPress={() => navigation.navigate('Carousel')} />
         </>
     )
 }
