@@ -40,5 +40,10 @@ export default [
         name: "Carousel",
         title: "轮播图",
         component: require("../screens/Carousel").default
+    },
+    {
+        name: "Toast",
+        title: "Toast提示",
+        component: require("../screens/Toast").default
     }
 ]
