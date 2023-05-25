@@ -45,5 +45,10 @@ export default [
         name: "Toast",
         title: "Toast提示",
         component: require("../screens/Toast").default
+    },
+    {
+        name: "Preview",
+        title: "预览图片",
+        component: require("../screens/Preview").default
     }
 ]
