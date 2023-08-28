@@ -1,13 +1,25 @@
-import 'react-native-gesture-handler'
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import StackNavigator from "./src/router/StackNavigator"
-const App = () => {
+import React, { useState } from 'react'
+import { StyleSheet, View, Button } from 'react-native'
+import { StatusBar } from 'expo-status-bar'
+import PopUp from "./components/PopUp"
+import CityArea from './components/CityArea'
+
+export default function App() {
+  const [visible, setVisible] = useState(true)
+
   return (
-    <NavigationContainer>
-      <StackNavigator />
-    </NavigationContainer>
-  );
+    <View style={styles.container}>
+      <StatusBar />
+      <Button title='省市区三级联动' onPress={() => setVisible(true)} />
+      <PopUp visible={visible} closeModal={() => setVisible(false)}>
+        <CityArea />
+      </PopUp>
+    </View>
+  )
 }
 
-export default App;
+const styles = StyleSheet.create({
+  container: {
+
+  },
+})
