@@ -1,6 +1,5 @@
 import React from "react"
-import { Dimensions, Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
-const { width } = Dimensions.get('window')
+import { Modal, StyleSheet, TouchableOpacity, View } from 'react-native'
 
 export default (props) => {
     const { visible, onClose, children } = props
@@ -25,7 +24,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         left: 0,
         bottom: 0,
-        width: width,
+        width: "100%",
         backgroundColor: '#ffffff',
         zIndex: 1,
         padding: 10,
