@@ -1,25 +1,23 @@
 import React, { useState } from 'react'
-import { StyleSheet, View, Button } from 'react-native'
-import { StatusBar } from 'expo-status-bar'
+import { Button, Platform } from 'react-native'
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context'
 import PopUp from "./components/PopUp"
 import CityArea from './components/CityArea'
 
 export default function App() {
   const [visible, setVisible] = useState(true)
 
+  const AreaView = (props) => {
+    const { children } = props
+    return Platform.OS == "web" ? <SafeAreaProvider>{children}</SafeAreaProvider> : <SafeAreaView>{children}</SafeAreaView>
+  }
+
   return (
-    <View style={styles.container}>
-      <StatusBar />
+    <AreaView>
       <Button title='省市区三级联动' onPress={() => setVisible(true)} />
-      <PopUp visible={visible} closeModal={() => setVisible(false)}>
+      <PopUp visible={visible} onClose={() => setVisible(false)}>
         <CityArea />
       </PopUp>
-    </View>
+    </AreaView>
   )
 }
-
-const styles = StyleSheet.create({
-  container: {
-
-  },
-})

@@ -3,16 +3,11 @@ import { Dimensions, Modal, StyleSheet, TouchableOpacity, View } from 'react-nat
 const { width } = Dimensions.get('window')
 
 export default (props) => {
-    const { visible, closeModal, children } = props
-
-    const close = () => {
-        closeModal(false)
-    }
+    const { visible, onClose, children } = props
 
     return (
-        <Modal transparent visible={visible} animationType={'fade'} onRequestClose={() => close()}>
-            <TouchableOpacity style={styles.overlay} activeOpacity={1}
-                onPress={() => close()} />
+        <Modal transparent visible={visible} animationType={'fade'} onRequestClose={() => onClose()}>
+            <TouchableOpacity style={styles.overlay} activeOpacity={1} onPress={() => onClose()} />
             <View style={styles.content}>
                 {children}
             </View>
@@ -34,5 +29,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff',
         zIndex: 1,
         padding: 10,
+        borderTopLeftRadius: 10,
+        borderTopRightRadius: 10,
     },
 })
