@@ -1,12 +1,37 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { View, StyleSheet, FlatList, Text, TouchableOpacity } from 'react-native'
 import pcaCode from "../assets/pca-code.json"
 
-export default () => {
+export default (props) => {
+    const { value } = props
+
     const [selected, setSelected] = useState([]) //选择过的省市区
     const [options, setOptions] = useState([pcaCode]) //每一级的数据
     const [level, setLevel] = useState(0) // 当前展示第几级
 
+    useEffect(() => {
+        if (!value) return
+        let trees = findNodeByCode(pcaCode, value) || []
+        const select = trees.map((item) => ({ code: item.code, name: item.name }))
+        const child = trees.map((item) => item.children)
+        setSelected(select)
+        setOptions([pcaCode].concat(child))
+        setLevel(select.length == 0 ? 0 : select.length - 1)
+    }, [value])
+
+    // 通过code寻找上级节点
+    const findNodeByCode = (tree, code) => {
+        for (let item of tree) {
+            if (item.code == code) return [item]
+            if (item.children) {
+                const result = findNodeByCode(item.children, code)
+                if (result) return [item, ...result]
+            }
+        }
+        return null
+    }
+
+    // 列表子选项 
     const renderItem = ({ item }) => (
         <TouchableOpacity style={styles.option} onPress={() => activeItem(item)}>
             <Text style={[styles.option_text, isActive(item.code) && styles.option_text_active]}>{item.name}</Text>
@@ -14,8 +39,10 @@ export default () => {
         </TouchableOpacity >
     )
 
+    // 选中的code
     const isActive = (code) => selected.some(item => item.code == code)
 
+    // 点击选项
     const activeItem = (item) => {
         setSelected((prev) => {
             const newSelected = [...prev]
@@ -33,6 +60,7 @@ export default () => {
         }
     }
 
+    // 顶部面板
     const PanelTab = () => {
         const tabs = selected.length < 3 ? selected.concat({ name: "请选择" }) : selected
         return (
