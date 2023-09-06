@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { View, StyleSheet, FlatList, Text, TouchableOpacity } from 'react-native'
 import pcaCode from "../assets/pca-code.json"
 
@@ -6,10 +6,6 @@ export default () => {
     const [selected, setSelected] = useState([]) //选择过的省市区
     const [options, setOptions] = useState([pcaCode]) //每一级的数据
     const [level, setLevel] = useState(0) // 当前展示第几级
-
-    useEffect(() => {
-        console.log(selected)
-    }, [selected])
 
     const renderItem = ({ item }) => (
         <TouchableOpacity style={styles.option} onPress={() => activeItem(item)}>
@@ -30,9 +26,9 @@ export default () => {
             const nextLevel = level + 1
             setLevel(nextLevel)
             setOptions((prev) => {
-                const nextOptions = [...prev]
-                nextOptions[nextLevel] = item.children
-                return nextOptions
+                const newOptions = [...prev]
+                newOptions[nextLevel] = item.children
+                return newOptions.slice(0, nextLevel + 1)
             })
         }
     }
@@ -56,6 +52,7 @@ export default () => {
             </View>
         )
     }
+
     return (
         <>
             <PanelTab />
