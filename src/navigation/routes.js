@@ -8,47 +8,65 @@ export default [
     },
     {
         name: "Detail",
-        title: "详情",
-        component: require("../screens/Detail").default
+        component: require("../screens/Detail").default,
+        options: {
+            title: "详情",
+        }
     },
     {
         name: "CustomPop",
-        title: "自定义弹窗",
-        component: require("../screens/CustomPop").default
+        component: require("../screens/CustomPop").default,
+        options: {
+            title: "自定义弹窗",
+        }
     },
     {
         name: "Drawer",
-        title: "抽屉",
-        component: require("../screens/Drawer").default
+        component: require("../screens/Drawer").default,
+        options: {
+            title: "抽屉",
+        }
     },
     {
         name: "Tab",
-        title: "选项卡",
-        component: require("../screens/Tab").default
+        component: require("../screens/Tab").default,
+        options: {
+            title: "选项卡",
+        }
     },
     {
         name: "Picker",
-        title: "选择器",
-        component: require("../screens/Picker").default
+        component: require("../screens/Picker").default,
+        options: {
+            title: "选择器",
+        }
     },
     {
         name: "Sheet",
-        title: "sheet弹窗",
-        component: require("../screens/Sheet").default
+        component: require("../screens/Sheet").default,
+        options: {
+            title: "sheet弹窗",
+        }
     },
     {
         name: "Carousel",
-        title: "轮播图",
-        component: require("../screens/Carousel").default
+        component: require("../screens/Carousel").default,
+        options: {
+            title: "轮播图",
+        }
     },
     {
         name: "Toast",
-        title: "Toast提示",
-        component: require("../screens/Toast").default
+        component: require("../screens/Toast").default,
+        options: {
+            title: "Toast提示",
+        }
     },
     {
         name: "Preview",
-        title: "预览图片",
-        component: require("../screens/Preview").default
+        component: require("../screens/Preview").default,
+        options: {
+            title: "预览图片",
+        }
     }
 ]

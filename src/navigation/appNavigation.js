@@ -1,19 +1,17 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-const Stack = createNativeStackNavigator()
 import routes from "./routes"
+
+const Stack = createNativeStackNavigator()
 
 export default () => {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="">
-                {routes.map(item => {
-                    return (
-                        <Stack.Screen key={item.name} name={item.name} component={item.component}
-                            options={Object.assign({ title: item.title }, item.options)} />
-                    )
-                })}
+                {routes.map(({ name, component, options }) => (
+                    <Stack.Screen key={name} name={name} component={component} options={options} />
+                ))}
             </Stack.Navigator>
         </NavigationContainer>
     )
