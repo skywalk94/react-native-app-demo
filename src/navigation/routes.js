@@ -1,6 +1,6 @@
 export default [
     {
-        name: "tabScreens",
+        name: "TabBar",
         component: require("./tabNavigation").default,
         options: {
             headerShown: false
