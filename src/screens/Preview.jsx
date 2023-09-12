@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Button, Modal } from 'react-native'
 import ImageViewer from 'react-native-image-zoom-viewer'
+// react-native-image-viewing 可选方案不支持web
 const images = [
     { url: 'https://avatars2.githubusercontent.com/u/7970947?v=3&s=460' },
     { url: 'http://img.netbian.com/file/2021/0605/smalld9fcb449fa428b1cc001b40527b990761622906649.jpg' },
