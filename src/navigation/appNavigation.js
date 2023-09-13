@@ -1,14 +1,13 @@
 import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createStackNavigator, CardStyleInterpolators } from '@react-navigation/stack'
 import routes from "./routes"
 
-const Stack = createNativeStackNavigator()
-
+const Stack = createStackNavigator()
 export default () => {
     return (
         <NavigationContainer>
-            <Stack.Navigator initialRouteName="">
+            <Stack.Navigator initialRouteName="" screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
                 {routes.map(({ name, component, options }) => (
                     <Stack.Screen key={name} name={name} component={component} options={options} />
                 ))}
