@@ -68,5 +68,12 @@ export default [
         options: {
             title: "预览图片",
         }
+    },
+    {
+        name: "Axios",
+        component: require("../screens/Axios").default,
+        options: {
+            title: "Axios请求",
+        }
     }
 ]

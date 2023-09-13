@@ -14,6 +14,7 @@ export default () => {
             <Button title='轮播' onPress={() => navigation.navigate('Carousel')} />
             <Button title='Toast提醒' onPress={() => navigation.navigate('Toast')} />
             <Button title='预览图片' onPress={() => navigation.navigate('Preview')} />
+            <Button title='Axios请求' onPress={() => navigation.navigate('Axios')} />
         </>
     )
 }
