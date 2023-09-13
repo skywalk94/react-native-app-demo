@@ -6,10 +6,10 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "backgroundColor": "#ffffff",
     "splash": {
       "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#9e8061"
+      "resizeMode": "cover"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,8 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/icon.png"
       },
       "package": "com.iapex.expoappdemo"
     },
