@@ -75,5 +75,12 @@ export default [
         options: {
             title: "Axios请求",
         }
+    },
+    {
+        name: "ViewShot",
+        component: require("../screens/ViewShot").default,
+        options: {
+            title: "视图层生成图片",
+        }
     }
 ]

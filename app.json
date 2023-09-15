@@ -26,6 +26,16 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "plugins": [
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "是否允许访问您的相册",
+          "savePhotosPermission": "是否允许保存图片到您的相册",
+          "isAccessMediaLocationEnabled": true
+        }
+      ]
+    ],
     "extra": {
       "eas": {
         "projectId": "be57b176-e5c2-4857-81a9-fb9c84ca6b04"
