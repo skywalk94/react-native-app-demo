@@ -5,11 +5,14 @@ import routes from "./routes"
 
 const Stack = createStackNavigator()
 export default () => {
+    const defaultOptions = {
+        headerBackTitleVisible: false
+    }
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName="" screenOptions={{ cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS }}>
                 {routes.map(({ name, component, options }) => (
-                    <Stack.Screen key={name} name={name} component={component} options={options} />
+                    <Stack.Screen key={name} name={name} component={component} options={{ ...defaultOptions, ...options }} />
                 ))}
             </Stack.Navigator>
         </NavigationContainer>
