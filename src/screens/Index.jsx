@@ -16,6 +16,7 @@ export default () => {
             <Button title='预览图片' onPress={() => navigation.navigate('Preview')} />
             <Button title='Axios请求' onPress={() => navigation.navigate('Axios')} />
             <Button title='视图层生成图片' onPress={() => navigation.navigate('ViewShot')} />
+            <Button title='消息推送' onPress={() => navigation.navigate('Notice')} />
         </>
     )
 }

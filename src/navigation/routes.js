@@ -82,5 +82,12 @@ export default [
         options: {
             title: "视图层生成图片",
         }
+    },
+    {
+        name: "Notice",
+        component: require("../screens/Notice").default,
+        options: {
+            title: "消息推送",
+        }
     }
 ]
