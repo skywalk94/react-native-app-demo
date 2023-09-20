@@ -13,14 +13,14 @@ export default () => {
         })
     }
 
-    const saveImg = async (item) => {
+    const saveImg = async (localUri) => {
         const permission = await MediaLibrary.requestPermissionsAsync()
         if (!permission.granted) return
-        const asset = await MediaLibrary.createAssetAsync(item)
+        const asset = await MediaLibrary.createAssetAsync(localUri)
         MediaLibrary.createAlbumAsync('Images', asset, false).then(() => {
             console.log('保存成功')
-        }).catch(() => {
-            console.log('保存失败')
+        }).catch((err) => {
+            console.log('保存失败', err)
         })
     }
 
