@@ -18,6 +18,7 @@ export default () => {
             <Button title='视图层生成图片' onPress={() => navigation.navigate('ViewShot')} />
             <Button title='消息推送' onPress={() => navigation.navigate('Notice')} />
             <Button title='图表' onPress={() => navigation.navigate('Chart')} />
+            <Button title='视频' onPress={() => navigation.navigate('Video')} />
         </>
     )
 }

@@ -103,5 +103,12 @@ export default [
         options: {
             title: "图表",
         }
+    },
+    {
+        name: "Video",
+        component: require("../screens/Video").default,
+        options: {
+            title: "视频",
+        }
     }
 ]
