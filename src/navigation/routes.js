@@ -89,5 +89,12 @@ export default [
         options: {
             title: "消息推送",
         }
+    },
+    {
+        name: "Chart",
+        component: require("../screens/Chart").default,
+        options: {
+            title: "图表",
+        }
     }
 ]
