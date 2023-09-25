@@ -14,6 +14,13 @@ export default [
         }
     },
     {
+        name: "Rn",
+        component: require("../screens/Rn").default,
+        options: {
+            title: "Rn功能",
+        }
+    },
+    {
         name: "CustomPop",
         component: require("../screens/CustomPop").default,
         options: {
